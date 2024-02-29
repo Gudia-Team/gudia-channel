@@ -7,7 +7,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 export async function Navbar() {
     const { isAuthenticated } = getKindeServerSession(); //verbindung zu kinde-auth-nextjs um alle page zu schützen
     return (
-        <nav className="bg-background h-[10vh] flex items-center">
+        <nav className="bg-background h-[8vh] flex items-center ">
             <div className="container flex items-center justify-between">
                 <Link href="/">
                     <h1 className="font-bold text-3xl">Gudia</h1>
