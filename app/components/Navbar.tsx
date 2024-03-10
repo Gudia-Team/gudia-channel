@@ -7,7 +7,8 @@ import { User } from "lucide-react";
 import { UserNav } from "./UserNav";
 
 export async function Navbar() {
-    const { isAuthenticated } = getKindeServerSession(); //verbindung zu kinde-auth-nextjs um alle page zu schützen
+    const { isAuthenticated, getUser } = getKindeServerSession(); //verbindung zu kinde-auth-nextjs um alle page zu schützen
+    const user = await getUser();
     return (
         <nav className="bg-background h-[8vh] flex items-center ">
             <div className="container flex items-center justify-between">
@@ -19,7 +20,7 @@ export async function Navbar() {
                 <div className="flex items-center gap-x-5">
                     <ThemeToggle />
                     {(await isAuthenticated()) ? (
-                        <UserNav />
+                        <UserNav name={user?.given_name as string} email={user?.email as string} image={user?.picture as string} />
                     ) : (
                         <div className=" flex items-center gap-x-5">
                             <LoginLink>

@@ -19,14 +19,14 @@ export const navItems = [
     { name: "Kaufen", icon: CreditCard, href: "/dashboard/billing" },
 ];
 
-export function UserNav() {
+export function UserNav({ name, email, image }: { name: string, email: string, image: string }) { //Interface für UserNav
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                     <Avatar className="h-10 w-10 rounded-full">
                         <AvatarImage className="h-full w-full rounded-[inherit] object-cover"
-                            src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80"
+                            src={image}
                             alt="Colm Tuite" />
                         <AvatarFallback
                             className="text-violet11 leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
@@ -40,8 +40,8 @@ export function UserNav() {
             <DropdownMenuContent className="w-40" align-item="center" forceMount >
                 <DropdownMenuLabel>
                     <div className="flex flex-col space-y-1">
-                        <p className="w-full text-sm font-medium loading-none text-primary">Salar Shabahang</p>
-                        <p className="w-full text-xs loading-none text-muted-foreground">salar.sh@gmail.com</p>
+                        <p className="w-full text-sm font-medium loading-none text-primary">{name}</p>
+                        <p className="w-full text-xs loading-none text-muted-foreground">{email}</p>
                     </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
