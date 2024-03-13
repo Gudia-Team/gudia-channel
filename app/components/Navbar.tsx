@@ -10,9 +10,10 @@ export async function Navbar() {
     const { isAuthenticated, getUser } = getKindeServerSession(); //verbindung zu kinde-auth-nextjs um alle page zu schützen
     const user = await getUser();
     return (
-        <nav className="bg-background h-[8vh] flex items-center ">
-            <div className="container flex items-center justify-between">
-                <Link href="/">
+        <>
+        <nav className="bg-bg-background sticky z-50 top-0 inset-x-0 h-16 mt-3 ml-4 mr-4">
+            <div className="flex items-center justify-between">
+                <Link href="/" className="relative justify-start">
                     <h1 className="font-bold text-3xl">Gudia
                     </h1>
                     <p className="w-full text-xs loading-none text-muted-foreground">Tv Channel & Journalist </p>
@@ -34,6 +35,7 @@ export async function Navbar() {
                 </div>
             </div>
         </nav>
+        </>
     )
 
 }
