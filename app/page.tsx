@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 export default async function Home() {
   const { isAuthenticated } = getKindeServerSession();
   if (await isAuthenticated()) {
-    return redirect('/dashboard');
+    return redirect('');
   }
   return (
     <section className="flex items-center justify-center bg-background h-[40vh] " >

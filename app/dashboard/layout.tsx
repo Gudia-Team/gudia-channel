@@ -3,9 +3,6 @@ import { DashboardNav } from "../components/DashboardNav";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import prisma from "../lib/db";
-import { unstable_noStore as noStore } from "next/cache";
-import { Award } from "lucide-react";
-
 
 async function getData({ email, id, firstName, lastName, profileImage }: {
     email: string;
@@ -13,8 +10,7 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
     firstName: string | undefined | null;
     lastName: string | undefined | null;
     profileImage: string | undefined | null;
-}) {
-    noStore();
+}): Promise<void>{
     const user = prisma.user.findUnique({
         where: {
             id: id,
@@ -37,16 +33,16 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
     }
 }
 
-export default async function DashboardLayout({ children }: { children: ReactNode }) {
+export default async function DashboardLayout({ children, }: { children: ReactNode; }) {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
     if (!user) {
         return redirect("/");
     }
     await getData({
-        id: user.id as string,
         email: user.email as string,
         firstName: user.given_name as string,
+        id: user.id as string,
         lastName: user.family_name as string,
         profileImage: user.picture,
     });
