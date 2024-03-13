@@ -11,7 +11,7 @@ export async function Navbar() {
     const user = await getUser();
     return (
         <>
-        <nav className="bg-bg-background sticky z-50 top-0 inset-x-0 h-16 mt-3 ml-4 mr-4">
+        <nav className="bg-background sticky z-50 top-0 inset-x-0 h-16 mt-3 ml-4 mr-4">
             <div className="flex items-center justify-between">
                 <Link href="/" className="relative justify-start">
                     <h1 className="font-bold text-3xl">Gudia
