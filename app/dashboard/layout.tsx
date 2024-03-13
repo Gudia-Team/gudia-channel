@@ -11,7 +11,7 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
     lastName: string | undefined | null;
     profileImage: string | undefined | null;
 }): Promise<void>{
-    const user = await prisma.user.findUnique({
+    const user = prisma.user.findUnique({
         where: {
             id: id,
         },
