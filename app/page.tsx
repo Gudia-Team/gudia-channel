@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import MaxWidthWrapper from "./components/MaxWidthWrapper";
 
 
 export default async function Home() {
@@ -12,7 +13,7 @@ export default async function Home() {
     return redirect('/dashboard');
   }
   return (
-    <section className="flex items-center justify-center bg-background h-[40vh] " >
+    <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center" >
       <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <div>
@@ -27,6 +28,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-    </section>
+    </MaxWidthWrapper>
   );
 }
