@@ -13,7 +13,20 @@ export const appRouter = router({
         code: 'UNAUTHORIZED'
       })
     // chekk wenn die user im detabase ist
-    const dbUser = await db.user
+    const dbUser = await db.user.findFirst({
+      where: {
+        id: user.id
+      }
+    });
+    if (!dbUser) {
+      // create user in DB
+      await db.user.create({
+        data: {
+          id: user.id,
+          email: user.email,
+        }
+      })
+    }
     return { success: true }
   }),
 })

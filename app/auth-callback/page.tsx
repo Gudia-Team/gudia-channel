@@ -1,19 +1,28 @@
-import { useRouter, useSearchParams } from 'next/navigation'
-import { trpc } from '../_trpc/client'
-import { useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation';
+import { trpc } from '../_trpc/client';
+import { useEffect } from 'react';
 
-const Page = async () => {
-    const router = useRouter()
+const Page = () => {
+    const router = useRouter();
 
-    const searchParams = useSearchParams()
-    const origin = searchParams.get('origin')
-    const query = trpc.authCallback.useQuery(undefined);
+    const searchParams = useSearchParams();
+    const origin = searchParams.get('origin');
+    const query = trpc.authCallback.useQuery(undefined, {
+        retry: true,
+        retryDelay: 500,
+    });
 
     useEffect(() => {
         if (query.isSuccess && query.data?.success) {
-            //user is synced to the database
-            router.push(origin ? `/${origin}` : "/dashboard")
+            // Benutzer ist in der Datenbank synchronisiert
+            router.push(origin ? `/${origin}` : '/dashboard');
         }
-    }, [query.isSuccess, query.data, router, origin]);
-}
-    export default Page
+        if ((onerror as { data?: { code: string } })?.data?.code === 'UNAUTHORIZED') {
+            router.push('/login');
+        }
+    }, [origin, query.data?.success, query.isSuccess, router]);
+
+    return null; // oder JSX für Platzhalter- oder Ladezustand
+};
+
+export default Page;
