@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { DashboardNav } from "../components/DashboardNav";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
-import prisma from "../lib/db";
+import {db} from "../db";
 
 async function getData({ email, id, firstName, lastName, profileImage }: {
     email: string;
@@ -10,8 +10,9 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
     firstName: string | undefined | null;
     lastName: string | undefined | null;
     profileImage: string | undefined | null;
-}): Promise<void>{
-    const user = prisma.user.findUnique({
+})
+{
+    const user = db.user.findUnique({
         where: {
             id: id,
         },
@@ -23,7 +24,7 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
 
     if (!user) {
         const name = `${firstName ?? ""} ${lastName ?? ""}`;
-        await prisma.user.create({
+        await db.user.create({
             data: {
                 id: id,
                 email: email,
