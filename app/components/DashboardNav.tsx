@@ -9,7 +9,7 @@ export function DashboardNav() {
     const pathname = usePathname(); // usepathname() ist ein hook, das wir in der Datei utils.ts definiert haben
     console.log(pathname);
     return (
-        <div className="bg-background border-cyan-400 border ">
+        <div className="bg-background">
             <nav className="grid items-start gap-2">
                 {navItems.map((item, index) => (
                     <Link key={index} href={item.href}>
