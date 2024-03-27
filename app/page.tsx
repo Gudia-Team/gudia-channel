@@ -12,17 +12,6 @@ export default async function Home() {
     return redirect('/dashboard');
   }
   return (
-    <main>
-      <Image
-        alt="hero"
-        src={gudia}
-        placeholder='blur'
-        quality={100}
-        fill
-        sizes='100vw'
-        style={{ objectFit: 'cover', zIndex: '-99' }}
-
-      />
       <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <div>
@@ -37,6 +26,5 @@ export default async function Home() {
           </div>
         </div>
       </div>
-    </main>
   );
 }
