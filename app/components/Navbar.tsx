@@ -5,7 +5,6 @@ import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextj
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { User } from "lucide-react";
 import { UserNav } from "./UserNav";
-import MaxWidthWrapper from "./MaxWidthWrapper";
 
 export async function Navbar() {
     const { isAuthenticated, getUser } = getKindeServerSession(); //verbindung zu kinde-auth-nextjs um alle page zu schützen
