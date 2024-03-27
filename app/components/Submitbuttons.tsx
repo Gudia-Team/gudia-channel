@@ -32,7 +32,7 @@ export function StripeSubscriptionCreationButton() {
                 </Button>
             ) : (
                 <Button type="submit" className="w-full">
-                    Create Subscription
+                    Abonieren für 15,00 € / Monat
                 </Button>
             )}
         </>
