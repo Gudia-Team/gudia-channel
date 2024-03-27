@@ -1,22 +1,12 @@
 import Image from "next/image";
-import gudia2 from '../../public/images/gudia2.jpg';
 
 export default function DashboardPage() {
     return (
-        <main>
-            <Image
-                alt="hero"
-                src={gudia2}
-                placeholder='blur'
-                quality={100}
-                fill
-                sizes='100vw'
-                style={{ objectFit: 'cover', zIndex: '-99' }}
-
-            />
-            <div>
-                <h1>Hallo Hier Ist Dashboard</h1>
-            </div>
+        <main className="container flex-row">
+            <h1 className="font-extrabold text-3xl text-center ">Hallo Hier Ist Dashboard</h1>
+            <p className="font-bold text-red-600 ">Probiere Bitte die kaufen commponents unter deine Avatar Logo Und schliss
+                 eine kauf und probiere die alle mögliche kauf daten und error  Danke Gudia Team.</p>
         </main>
+
     )
 }

@@ -13,7 +13,7 @@ export async function Navbar() {
         <nav className="bg-background sticky z-50 top-0 inset-x-0 h-16 mt-3 ml-4 mr-4">
             <div className="flex items-center justify-between">
                 <Link href="/" className="relative justify-start ml-4">
-                    <h1 className="font-bold text-3xl">Gudia
+                    <h1 className="font-bold text-3xl text-primary">Gudia
                     </h1>
                     <p className="w-full text-xs loading-none text-muted-foreground">Tv Channel & Journalist </p>
                 </Link>

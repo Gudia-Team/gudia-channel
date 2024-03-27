@@ -10,11 +10,11 @@ export function SubmitButton() {
         <>
             {pending ? (
                 <Button disabled className="w-fit">
-                    <Loader2 className="mr-2 w-4 h-4 animate-spin" /> Please Wait
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" /> Bitte warten
                 </Button>
             ) : (
                 <Button className="w-fit" type="submit">
-                    Save Now
+                    jetzt speichern
                 </Button>
             )}
         </>
@@ -28,7 +28,7 @@ export function StripeSubscriptionCreationButton() {
         <>
             {pending ? (
                 <Button disabled className="w-full">
-                    <Loader2 className="mr-2 w-4 h-4 animate-spin" /> Please Wait
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" /> Bitte warten
                 </Button>
             ) : (
                 <Button type="submit" className="w-full">
@@ -46,11 +46,11 @@ export function StripePortal() {
         <>
             {pending ? (
                 <Button disabled className="w-fit">
-                    <Loader2 className="mr-2 w-4 h-4 animate-spin" /> Please Wait
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" /> Bitte warten
                 </Button>
             ) : (
                 <Button className="w-fit" type="submit">
-                    View payment details
+                    Rechnung herunterladen oder Abonieren kündigen
                 </Button>
             )}
         </>

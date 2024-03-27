@@ -32,7 +32,6 @@ export function UserNav({ name, email, image }: { name: string, email: string, i
                             className="text-violet11 leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
                             delayMs={600}
                         >
-                            {name[0]}
                         </AvatarFallback>
                     </Avatar>
                 </Button>
