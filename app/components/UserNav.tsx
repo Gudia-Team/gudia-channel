@@ -15,7 +15,7 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export const navItems = [
     { name: "Home", icon: Home, href: "/dashboard" },
-    { name: "Einstellung", icon: Settings, href: "/dashboard/settings" },
+    // { name: "Einstellung", icon: Settings, href: "/dashboard/settings" },
     { name: "Kaufen", icon: CreditCard, href: "/dashboard/billing" },
 ];
 
@@ -32,7 +32,7 @@ export function UserNav({ name, email, image }: { name: string, email: string, i
                             className="text-violet11 leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
                             delayMs={600}
                         >
-                            Salar
+                            {name[0]}
                         </AvatarFallback>
                     </Avatar>
                 </Button>
