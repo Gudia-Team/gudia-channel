@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 import { DashboardNav } from "../components/DashboardNav";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
-import { db } from "../db";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import prisma from "../lib/db";
 
 async function getData({ email, id, firstName, lastName, profileImage }: {
     email: string;
@@ -12,19 +12,16 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
     lastName: string | undefined | null;
     profileImage: string | undefined | null;
 }) {
-    const user = db.user.findUnique({
+    const user = await prisma.user.findUnique({
         where: {
-            id: id,
+            email: email,
         },
-        select: {
-            id: true,
-            stripeCustomerId: true,
-        },
+
     });
 
     if (!user) {
-        const name = `${firstName ?? ""} ${lastName ?? ""}`;
-        await db.user.create({
+        const name = `${firstName ?? ""} ${lastName ?? ""}`.trim();
+        await prisma.user.create({
             data: {
                 id: id,
                 email: email,
