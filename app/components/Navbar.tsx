@@ -5,15 +5,26 @@ import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextj
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { User } from "lucide-react";
 import { UserNav } from "./UserNav";
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+
 
 export async function Navbar() {
     const { isAuthenticated, getUser } = getKindeServerSession(); //verbindung zu kinde-auth-nextjs um alle page zu schützen
     const user = await getUser();
     return (
-        <nav className="bg-background sticky z-50 top-0 inset-x-0 h-16 mt-3 ml-4 mr-4">
+        <main className="bg-background sticky z-50 top-0 inset-x-0 h-16 mt-3 ml-4 mr-4">
             <div className="flex items-center justify-between">
                 <Link href="/" className="relative justify-start ml-4">
-                    <h1 className="font-bold text-3xl text-primary">Gudia
+                    <h1 className="font-bold text-2xl text-primary">Gudia
                     </h1>
                     <p className="w-full text-xs loading-none text-muted-foreground">Tv Channel & Journalist </p>
                 </Link>
@@ -33,7 +44,8 @@ export async function Navbar() {
                     )}
                 </div>
             </div>
-        </nav>
+        </main>
+
     )
 
 }
