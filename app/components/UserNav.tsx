@@ -12,6 +12,7 @@ import {
 import { CreditCard, DoorClosed, Home, Settings } from "lucide-react";
 import Link from "next/link";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 export const navItems = [
     { name: "Home", icon: Home, href: "/dashboard" },
