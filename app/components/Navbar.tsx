@@ -5,16 +5,8 @@ import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextj
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { User } from "lucide-react";
 import { UserNav } from "./UserNav";
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
+import { NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
 
 
 export async function Navbar() {
@@ -27,6 +19,7 @@ export async function Navbar() {
                     <h1 className="font-bold text-2xl text-primary">Gudia
                     </h1>
                     <p className="w-full text-xs loading-none text-muted-foreground">Tv Channel & Journalist </p>
+                    
                 </Link>
                 <div className="flex items-center gap-x-5 mr-4">
                     <ThemeToggle />
