@@ -5,6 +5,7 @@ import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import gudia from '../public/images/gudia.jpg';
+import MaxWidthWrapper from "./components/MaxWidthWrapper";
 
 export default async function Home() {
   const { isAuthenticated } = getKindeServerSession();
@@ -12,19 +13,17 @@ export default async function Home() {
     return redirect('/dashboard');
   }
   return (
-      <div className="relative items-center w-full px-5 py-12 mx-auto lg:px-16 max-w-7xl md:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight lg:text-5xl">Willkommen Im Gudia Profesional</h1>
-          </div>
-          <div className="relative justify-center max-w-sm max-auto mt-2 mx-60 py-5" >
-            <RegisterLink>
-              <Button size="lg" className="w-60 py-4 ">
-                Get Started Free
-              </Button>
-            </RegisterLink>
-          </div>
+    <>
+      <MaxWidthWrapper >
+        <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl'">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Willkommen Im Gudia Profesional</h1>
+          <RegisterLink>
+            <Button size="lg" className="w-60 py-4 ">
+              Get Started Free
+            </Button>
+          </RegisterLink>
         </div>
-      </div>
+      </MaxWidthWrapper>
+    </>
   );
 }
