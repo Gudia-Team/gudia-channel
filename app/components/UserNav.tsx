@@ -37,7 +37,7 @@ export function UserNav({ name, email, image }: { name: string, email: string, i
                     </Avatar>
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40" align-item="center" forceMount >
+            <DropdownMenuContent className="w-40 z-50" align-item="center" forceMount >
                 <DropdownMenuLabel>
                     <div className="flex flex-col space-y-1">
                         <p className="w-full text-sm font-medium loading-none text-primary">{name}</p>
