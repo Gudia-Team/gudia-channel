@@ -12,15 +12,14 @@ model User {
   id                 String              @id @default(uuid())
   name               String?
   email              String              @unique
-  image              String?
-  createdAt          DateTime            @default(now())
-  updatedAt          DateTime            @updatedAt
-  sessions           Session[]
-  movies             Movie[]
-  accounts           Account[]
-  verificationTokens VerificationToken[]
-  Subscription       Subscription?
   stripeCustomerId   String?             @unique
+  createdAt          DateTime            @default(now())
+  image              String?
+  updatedAt          DateTime            @updatedAt
+  accounts           Account[]
+  sessions           Session[]
+  Subscription       Subscription?
+  verificationTokens VerificationToken[]
 }
 
 model Account {
@@ -32,25 +31,21 @@ model Account {
   refreshToken       String?
   accessToken        String?
   accessTokenExpires DateTime?
-  user               User      @relation(fields: [userId], references: [id])
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
 
   @@unique([provider, providerAccountId])
 }
 
 model Movie {
-  id          String   @id @default(uuid())
+  id          String  @id @default(uuid())
   title       String
   description String?
   videoUrl    String?
   thumbnail   String?
   genre       String?
-  duration    Int? // Dauer in Minuten
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  duration    String?
 }
 
 model Session {
@@ -58,9 +53,9 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id])
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
 }
 
 model Subscription {
@@ -72,8 +67,8 @@ model Subscription {
   currentPeriodEnd     Int
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  user                 User     @relation(fields: [userId], references: [id])
   userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id])
 }
 
 model VerificationToken {
@@ -82,9 +77,9 @@ model VerificationToken {
   identifier String
   expires    DateTime
   userId     String?
-  user       User?    @relation(fields: [userId], references: [id])
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  user       User?    @relation(fields: [userId], references: [id])
 
   @@unique([identifier, token])
 }
