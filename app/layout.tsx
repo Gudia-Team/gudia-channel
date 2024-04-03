@@ -3,10 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
 import { Navbar } from "./components/Navbar";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import prisma from "./lib/db";
 import { unstable_noStore as noStore } from "next/cache";
-import { NavigationMenu } from "@/components/ui/navigation-menu";
 
 const inter = Inter({ subsets: ["latin"] });
 

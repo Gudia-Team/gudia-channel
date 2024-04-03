@@ -22,7 +22,7 @@ export const navItems = [
 
 export function UserNav({ name, email, image }: { name: string, email: string, image: string }) { //Interface für UserNav
     return (
-        <DropdownMenu>
+        <DropdownMenu >
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                     <Avatar className="h-10 w-10 rounded-full">
