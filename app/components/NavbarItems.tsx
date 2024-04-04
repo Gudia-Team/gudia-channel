@@ -29,7 +29,7 @@ export default function NavbarItems() {
                                 <li>
                                     <Link
                                         href={link.href}
-                                        className="font-xs text-lg"
+                                        className="font-xs text-lg "
                                     >
                                         {link.name}
                                     </Link>
