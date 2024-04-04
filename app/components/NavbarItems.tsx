@@ -1,5 +1,6 @@
 "use client";
 
+import { Bell, Search } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -28,7 +29,7 @@ export default function NavbarItems() {
                                 <li>
                                     <Link
                                         href={link.href}
-                                        className="text-primary font-xs text-lg"
+                                        className="font-xs text-lg"
                                     >
                                         {link.name}
                                     </Link>
@@ -36,7 +37,7 @@ export default function NavbarItems() {
                             ) : (
                                 <li>
                                     <Link
-                                        className="text-primary font-xs  text-lg"
+                                        className="font-xs  text-lg"
                                         href={link.href}
                                     >
                                         {link.name}
@@ -47,6 +48,11 @@ export default function NavbarItems() {
                     ))}
                 </ul>
             </div>
+            {/* <div className="flex ml-10 items-center justify-end gap-x-4">
+                <Search className="w-8 h-8 text-blue-600 cursor-pointer" />
+                <Bell className="w-8 h-8 text-red-800 cursor-pointer" />
+
+            </div> */}
 
         </div>
     );
