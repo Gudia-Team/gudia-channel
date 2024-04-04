@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { UserNav } from "./UserNav";
-import NavbarItems from "./NavbarItems";
 import React, { useEffect, useState } from 'react';
+import NavbarItems from "./NavbarItems";
 
 
 
@@ -21,8 +21,7 @@ export async function Navbar() {
                     </h1>
                     <p className="w-full text-xs loading-none text-muted-foreground">Tv Channel & Journalist </p>
                 </Link>
-                <NavbarItems label="home"/>
-                <NavbarItems label="about"/>
+                <NavbarItems />
                 <div className="flex items-center gap-x-5 mr-4">
                     <ThemeToggle />
                     {(await isAuthenticated()) ? (
