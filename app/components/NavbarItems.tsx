@@ -19,7 +19,7 @@ const links: linkProps[] = [
 export default function NavbarItems() {
     const pathName = usePathname();
     return (
-        <div className="w-full max-w-7xl mx-auto items-center justify-between px-5 sm:px-6 py-5 lg:px-8 flex">
+        <div className="w-full ml-[60vh] items-center">
             <div className="flex items-center">
                 <ul className="lg:flex gap-x-4 ml-14 hidden">
                     {links.map((link, idx) => (
