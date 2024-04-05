@@ -26,7 +26,7 @@ export default async function MovieVideo() {
                 autoPlay
                 muted
                 loop
-                src={data?.videoUrl ?? ""} 
+                src={data?.videoUrl ?? ""}
                 className='w-full absolute top-0 left-0 h-[60vh] object-cover -z-10 brightness-[60%]'
             >
             </video>
