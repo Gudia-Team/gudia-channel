@@ -12,7 +12,7 @@ export default function SeedDatabase() {
                     "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
                     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/7/70/Big.Buck.Bunny.-.Opening.Screen.png",
                     "genre": "Comedy",
-                    "duration": "10 minutes"
+                    "duration": 10
                 },
                 {
                     "title": "Sintel",

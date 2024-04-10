@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import prisma from '../lib/db';
+import { BsInfoLg } from "react-icons/bs";
 
 async function getData() {
     const data = await prisma.movie.findFirst({
@@ -37,6 +38,7 @@ export default async function MovieVideo() {
                     <p className='text-lg mt-5  line-clamp-3'>{data?.description}</p>
                     <div className='flex gap-x-3 mt-2'>
                         <Button>
+                            <BsInfoLg className='mr-1' />
                             See More
                         </Button>
                         <Button>
