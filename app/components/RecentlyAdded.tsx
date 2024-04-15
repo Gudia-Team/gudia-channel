@@ -31,9 +31,9 @@ async function getData(userId: string) {
 export default async function RecentlyAdded() {
     const data = await getData('');
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3">
+        <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-3 mb-5 -mt-10">
             {data.map((movie) => (
-                <div key={movie.id} className="relative h-48">
+                <div key={movie.id} className="relative h-45 ">
                     <Image
                         src={movie.imageString}
                         alt="Movie"
