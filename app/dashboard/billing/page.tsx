@@ -47,7 +47,7 @@ async function getData(userId: string) {
 export default async function BillingPage() {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
-    const data = await getData(user?.id as string);
+    const data = await getData("abs");
 
     async function createSubscription() {
         "use server";
