@@ -1,5 +1,5 @@
 import MovieVideo from "../components/MovieVideo";
-import RecentlyAdded from "../components/RecentlyAdded";
+
 
 export default function DashboardPage() {
     return (
@@ -7,8 +7,6 @@ export default function DashboardPage() {
 
             <MovieVideo />
             <h1 className="text-3xl font-bold">Recently Added</h1>
-            <RecentlyAdded />
-
         </div>
     )
 }

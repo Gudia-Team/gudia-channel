@@ -13,17 +13,23 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
 }) {
     const user = await prisma.user.findUnique({
         where: {
-            email: email,
+            email: "karishab86@gmail.com",
         },
         select: {
-            stripeCustomerId: true,
             id: true,
+            stripeCustomerId: true,
+            name: true,
+            email: true,
+            emailVerified: true,
+            image: true,
+            accounts: true,
+            sessions: true,
+            _count: true
         },
-
     });
 
     if (!user) {
-        const name = `${firstName ?? ""} ${lastName ?? ""}`.trim();
+        const name = `${firstName ?? ""} ${lastName ?? ""}`;
         await prisma.user.create({
             data: {
                 id: id,
@@ -32,15 +38,15 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
             },
         });
     }
+
     if (!user?.stripeCustomerId) {
         const data = await stripe.customers.create({
             email: email,
-
         });
+
         await prisma.user.update({
             where: {
                 id: id,
-                email: email,
             },
             data: {
                 stripeCustomerId: data.id,
@@ -48,7 +54,6 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
         });
     }
 }
-
 export default async function DashboardLayout({ children, }: { children: ReactNode; }) {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
