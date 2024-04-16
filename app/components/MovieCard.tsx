@@ -34,13 +34,13 @@ export function MovieCard({
     const pathName = usePathname();
     return (
         <>
-            <button onClick={() => setOpen(true)} className="-mt-14">
-                <PlayCircle className="h-20 w-20" />
+            <button onClick={() => setOpen(true)} className="-mt-14 text-primary">
+                <PlayCircle className="h-20 w-20 text-primary" />
             </button>
 
-            <div className="right-5 top-5 absolute z-10">
+            <div className="right-5 top-5 absolute z-10 text-primary">
                 {watchList ? (
-                    <form action={deleteFromWatchlist}>
+                    <form action={deleteFromWatchlist} >
                         <input type="hidden" name="watchlistId" value={wachtListId} />
                         <input type="hidden" name="pathname" value={pathName} />
                         <Button variant="outline" size="icon">
@@ -58,7 +58,7 @@ export function MovieCard({
                 )}
             </div>
 
-            <div className="p-5 absolute bottom-0 left-0">
+            <div className="p-5 absolute bottom-0 left-0 text-primary">
                 <h1 className="font-bold text-lg line-clamp-1">{title}</h1>
                 <div className="flex gap-x-2 items-center">
                     <p className="font-normal text-sm">{year}</p>
@@ -67,7 +67,7 @@ export function MovieCard({
                     </p>
                     <p className="font-normal text-sm">{time}h</p>
                 </div>
-                <p className="line-clamp-1 text-sm text-gray-200 font-light">
+                <p className="line-clamp-1 text-sm text-gray-200 font-light text-primary">
                     {overview}
                 </p>
             </div>
