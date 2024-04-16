@@ -35,7 +35,7 @@ export default async function MovieVideo() {
             >
             </video>
 
-            <div className='relative w-[90%] lg:w-[35%] mx-auto ml-10'>
+            <div className='relative w-[90%] lg:w-[35%] mx-auto ml-10 text-primary'>
                 <h1 className='text-white text-4xl font-bold lg:text-6-xl md:text-5xl '>{data?.title}</h1>
                 <p className='text-lg mt-5  line-clamp-3'>{data?.overview}</p>
                 <div className='flex gap-x-3 mt-2'>
