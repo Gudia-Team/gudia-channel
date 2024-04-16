@@ -27,7 +27,7 @@ export default function SeedDatabase() {
                     title: "A Haunting in Venice",
                     age: 12,
                     duration: 1.44,
-                    id: 1,
+                    id: 2,
                     overview:
                         "Celebrated sleuth Hercule Poirot, now retired and living in self-imposed exile in Venice, reluctantly attends a Halloween séance at a decaying, haunted palazzo. When one of the guests is murdered, the detective is thrust into a sinister world of shadows and secrets.",
                     release: 2023,
@@ -36,7 +36,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/yEddsSwweyE",
                 },
                 {
-                    id: 2,
+                    id: 3,
                     title: "Five Nights at Freddy's",
                     age: 16,
                     duration: 1.5,
@@ -51,7 +51,7 @@ export default function SeedDatabase() {
                 },
 
                 {
-                    id: 3,
+                    id: 4,
                     title: "The Blacklist",
                     age: 16,
                     duration: 0,
@@ -64,7 +64,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/-WYdUaK54fU",
                 },
                 {
-                    id: 4,
+                    id: 5,
                     title: "Suits",
                     age: 12,
                     duration: 0,
@@ -78,7 +78,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/85z53bAebsI",
                 },
                 {
-                    id: 5,
+                    id: 6,
                     title: "Chernobyl",
                     age: 16,
                     duration: 0,
@@ -92,7 +92,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/s9APLXM9Ei8",
                 },
                 {
-                    id: 6,
+                    id: 7,
                     title: "Retribution",
                     age: 12,
                     duration: 1.31,
@@ -106,7 +106,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/jzQn0-WH4WM",
                 },
                 {
-                    id: 7,
+                    id: 8,
                     title: "Spider-Man: Across the Spider-Verse",
                     age: 12,
                     duration: 2.2,
@@ -121,7 +121,7 @@ export default function SeedDatabase() {
                 },
 
                 {
-                    id: 8,
+                    id: 9,
                     title: "Coco",
                     release: 2017,
                     age: 0,
@@ -135,7 +135,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/xlnPHQ3TLX8",
                 },
                 {
-                    id: 9,
+                    id:10,
                     title: "Monk",
                     release: 2002,
                     age: 12,
@@ -149,7 +149,7 @@ export default function SeedDatabase() {
                     youtubeString: "https://www.youtube.com/embed/mftbaaU82Uc",
                 },
                 {
-                    id: 10,
+                    id: 11,
                     title: "Family Guy",
                     age: 16,
                     duration: 0,
