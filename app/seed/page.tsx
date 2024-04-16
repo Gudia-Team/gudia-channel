@@ -7,126 +7,162 @@ export default function SeedDatabase() {
         await prisma.movie.createMany({
             data: [
                 {
-                    "id": 0,
-                    "title": "Stranger Things",
-                    "age": 16,
-                    "duration": 0.8,
-                    "imageString": "https://image.tmdb.org/t/p/original/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg",
-                    "overview": "When a young boy disappears, his mother, a police chief, and his friends must confront terrifying supernatural forces in order to get him back.",
-                    "release": 2016,
-                    "videoSource": "",
-                    "category": "show",
-                    "youtubeString": "https://www.youtube.com/embed/mnd7sFt5c3A"
+                    id: 1,
+                    title: "Gran Turismo",
+                    age: 12,
+                    duration: 2.15,
+                    overview:
+                        "The ultimate wish-fulfillment tale of a teenage Gran Turismo player whose gaming skills won him a series of Nissan competitions to become an actual professional racecar driver.",
+                    videoSource:
+                        "https://utfs.io/f/916e1354-a1b6-4832-97ab-9fa95876b91a-bnyedt.mp4",
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/r7DuyYJ0N3cD8bRKsR5Ygq2P7oa.jpg",
+                    release: 2023,
+                    category: "recent",
+                    youtubeString: "https://www.youtube.com/embed/GVPzGBvPrzw",
                 },
                 {
-                    "id": 12,
-                    "title": "Breaking Bad",
-                    "age": 18,
-                    "duration": 0.47,
-                    "imageString": "https://image.tmdb.org/t/p/original/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg",
-                    "overview": "A high school chemistry teacher turned methamphetamine manufacturing drug dealer teams with a former student to create the purest meth on the market.",
-                    "release": 2008,
-                    "videoSource": "",
-                    "category": "show",
-                    "youtubeString": "https://www.youtube.com/embed/HhesaQXLuRY"
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/kHlX3oqdD4VGaLpB8O78M25KfdS.jpg",
+                    title: "A Haunting in Venice",
+                    age: 12,
+                    duration: 1.44,
+                    id: 1,
+                    overview:
+                        "Celebrated sleuth Hercule Poirot, now retired and living in self-imposed exile in Venice, reluctantly attends a Halloween séance at a decaying, haunted palazzo. When one of the guests is murdered, the detective is thrust into a sinister world of shadows and secrets.",
+                    release: 2023,
+                    videoSource: "",
+                    category: "recent",
+                    youtubeString: "https://www.youtube.com/embed/yEddsSwweyE",
                 },
                 {
-                    "id": 13,
-                    "title": "Inception",
-                    "age": 13,
-                    "duration": 2.28,
-                    "imageString": "https://image.tmdb.org/t/p/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
-                    "overview": "A skilled extractor is offered a chance to regain his old life as payment for a task considered to be impossible: 'inception', the implantation of another person's idea into a target's subconscious.",
-                    "release": 2010,
-                    "videoSource": "",
-                    "category": "movie",
-                    "youtubeString": "https://www.youtube.com/embed/YoHD9XEInc0"
+                    id: 2,
+                    title: "Five Nights at Freddy's",
+                    age: 16,
+                    duration: 1.5,
+                    overview:
+                        "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+                    release: 2023,
+                    videoSource: "",
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg",
+                    category: "recent",
+                    youtubeString: "https://www.youtube.com/embed/0VH9WCFV6XQ",
+                },
+
+                {
+                    id: 3,
+                    title: "The Blacklist",
+                    age: 16,
+                    duration: 0,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/dDPwCyZG8arYwMDoQl0sm4xccCE.jpg",
+                    overview: `Raymond "Red" Reddington, one of the FBI's most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he's made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this "The Blacklist". Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler`,
+                    release: 2013,
+                    videoSource: "",
+                    category: "show",
+                    youtubeString: "https://www.youtube.com/embed/-WYdUaK54fU",
                 },
                 {
-                    "id": 14,
-                    "title": "The Matrix",
-                    "age": 16,
-                    "duration": 2.16,
-                    "imageString": "https://image.tmdb.org/t/p/original/hEpWvX6Bp79eLxY1kX5ZZJcme5U.jpg",
-                    "overview": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-                    "release": 1999,
-                    "videoSource": "",
-                    "category": "movie",
-                    "youtubeString": "https://www.youtube.com/embed/m8e-FF8MsqU"
+                    id: 4,
+                    title: "Suits",
+                    age: 12,
+                    duration: 0,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/or0E36KfzJYZwqXeiCfm1JgepKF.jpg",
+                    overview:
+                        "While running from a drug deal gone bad, Mike Ross, a brilliant young college-dropout, slips into a job interview with one of New York City's best legal closers, Harvey Specter. Tired of cookie-cutter law school grads, Harvey takes a gamble by hiring Mike on the spot after he recognizes his raw talent and photographic memory.",
+                    release: 2011,
+                    videoSource: "",
+                    category: "show",
+                    youtubeString: "https://www.youtube.com/embed/85z53bAebsI",
                 },
                 {
-                    "id": 15,
-                    "title": "Avatar",
-                    "age": 13,
-                    "duration": 2.42,
-                    "imageString": "https://image.tmdb.org/t/p/original/6EiRUJpuoeQPghrs3YNktfnqOVh.jpg",
-                    "overview": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-                    "release": 2009,
-                    "videoSource": "",
-                    "category": "movie",
-                    "youtubeString": "https://www.youtube.com/embed/5PSNL1qE6VY"
+                    id: 5,
+                    title: "Chernobyl",
+                    age: 16,
+                    duration: 0,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/900tHlUYUkp7Ol04XFSoAaEIXcT.jpg",
+                    overview:
+                        "The true story of one of the worst man-made catastrophes in history: the catastrophic nuclear accident at Chernobyl. A tale of the brave men and women who sacrificed to save Europe from unimaginable disaster.",
+                    release: 2019,
+                    videoSource: "",
+                    category: "show",
+                    youtubeString: "https://www.youtube.com/embed/s9APLXM9Ei8",
                 },
                 {
-                    "id": 16,
-                    "title": "Interstellar",
-                    "age": 12,
-                    "duration": 2.49,
-                    "imageString": "https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-                    "overview": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-                    "release": 2014,
-                    "videoSource": "",
-                    "category": "movie",
-                    "youtubeString": "https://www.youtube.com/embed/zSWdZVtXT7E"
+                    id: 6,
+                    title: "Retribution",
+                    age: 12,
+                    duration: 1.31,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/iiXliCeykkzmJ0Eg9RYJ7F2CWSz.jpg",
+                    overview:
+                        "When a mysterious caller puts a bomb under his car seat, Matt Turner begins a high-speed chase across the city to complete a specific series of tasks- all with his kids trapped in the back seat.",
+                    release: 2023,
+                    videoSource: "",
+                    category: "recent",
+                    youtubeString: "https://www.youtube.com/embed/jzQn0-WH4WM",
                 },
                 {
-                    "id": 17,
-                    "title": "The Witcher",
-                    "age": 18,
-                    "duration": 1,
-                    "imageString": "https://image.tmdb.org/t/p/original/34FaY8qpjBAVysSfrJ1l7nrAQaD.jpg",
-                    "overview": "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
-                    "release": 2019,
-                    "videoSource": "",
-                    "category": "show",
-                    "youtubeString": "https://www.youtube.com/embed/ndl1W4ltcmg"
+                    id: 7,
+                    title: "Spider-Man: Across the Spider-Verse",
+                    age: 12,
+                    duration: 2.2,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/nGxUxi3PfXDRm7Vg95VBNgNM8yc.jpg",
+                    overview:
+                        "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+                    release: 2023,
+                    videoSource: "",
+                    category: "movie",
+                    youtubeString: "https://www.youtube.com/embed/shW9i6k8cB0",
+                },
+
+                {
+                    id: 8,
+                    title: "Coco",
+                    release: 2017,
+                    age: 0,
+                    duration: 1.45,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+                    overview:
+                        "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                    videoSource: "",
+                    category: "movie",
+                    youtubeString: "https://www.youtube.com/embed/xlnPHQ3TLX8",
                 },
                 {
-                    "id": 18,
-                    "title": "The Dark Knight",
-                    "age": 13,
-                    "duration": 2.32,
-                    "imageString": "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-                    "overview": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-                    "release": 2008,
-                    "videoSource": "",
-                    "category": "movie",
-                    "youtubeString": "https://www.youtube.com/embed/EXeTwQWrcwY"
+                    id: 9,
+                    title: "Monk",
+                    release: 2002,
+                    age: 12,
+                    duration: 0,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/cTQYB39EwM01fl9b9KpNUgZfOsT.jpg",
+                    overview:
+                        "Adrian Monk was once a rising star with the San Francisco Police Department, legendary for using unconventional means to solve the department's most baffling cases. But after the tragic (and still unsolved) murder of his wife Trudy, he developed an extreme case of obsessive-compulsive disorder. Now working as a private consultant, Monk continues to investigate cases in the most unconventional ways.",
+                    videoSource: "",
+                    category: "show",
+                    youtubeString: "https://www.youtube.com/embed/mftbaaU82Uc",
                 },
                 {
-                    "id": 19,
-                    "title": "Game of Thrones",
-                    "age": 18,
-                    "duration": 1,
-                    "imageString": "https://image.tmdb.org/t/p/original/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg",
-                    "overview": "Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
-                    "release": 2011,
-                    "videoSource": "",
-                    "category": "show",
-                    "youtubeString": "https://www.youtube.com/embed/BpJYNVhGf1s"
+                    id: 10,
+                    title: "Family Guy",
+                    age: 16,
+                    duration: 0,
+                    imageString:
+                        "https://image.tmdb.org/t/p/original/y4PDksvxM05sNxacoU8xIYITCDA.jpg",
+                    overview:
+                        "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+                    release: 1999,
+                    videoSource: "",
+                    category: "show",
+                    youtubeString: "https://www.youtube.com/embed/7hRxWGo49oc",
                 },
-                {
-                    "id": 20,
-                    "title": "Guardians of the Galaxy",
-                    "age": 12,
-                    "duration": 2.1,
-                    "imageString": "https://image.tmdb.org/t/p/original/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
-                    "overview": "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
-                    "release": 2014,
-                    "videoSource": "",
-                    "category": "movie",
-                    "youtubeString": "https://www.youtube.com/embed/d96cjJhvlMA"
-                },
-            ]
+            ],
         });
     }
 
