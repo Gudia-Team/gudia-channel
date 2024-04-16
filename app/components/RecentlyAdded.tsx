@@ -23,7 +23,7 @@ async function getData(userId: string) {
         orderBy: {
             createdAt: "desc",
         },
-        take: 4,
+        take: 10,
     });
 
     return data;

@@ -20,7 +20,7 @@ const links: linkProps[] = [
 export default function NavbarItems() {
     const pathName = usePathname();
     return (
-        <div className="items-center overflow-hidden lg:flex text-primary">
+        <div className="items-center overflow-hidden lg:flex text-primary ">
             <div className="flex items-center">
                 <ul className="lg:flex gap-x-4 hidden">
                     {links.map((link, idx) => (
@@ -48,12 +48,6 @@ export default function NavbarItems() {
                     ))}
                 </ul>
             </div>
-            {/* <div className="flex ml-10 items-center justify-end gap-x-4">
-                <Search className="w-8 h-8 text-blue-600 cursor-pointer" />
-                <Bell className="w-8 h-8 text-red-800 cursor-pointer" />
-
-            </div> */}
-
         </div>
     );
 }
