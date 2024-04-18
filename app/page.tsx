@@ -29,9 +29,9 @@ export default async function Home() {
           ></Image>
         </div>
         <div className=" container flex-row justify-between items-center  pl-20 text-center ">
-          <h1 className="text-6xl">Unlimited films, series and more..
+          <h1 className="text-6xl text-white">Unlimited films, series and more..
           </h1>
-          <p className="text-3xl">Enjoy <span className="text-primary">GUDIA TV.JOURNAL</span> wherever you want. Can be canceled at any time.
+          <p className="text-3xl text-white">Enjoy <span className="text-primary">GUDIA TV.JOURNAL</span> wherever you want. Can be canceled at any time.
             Are you ready to go? Enter your email address to start or reactivate your membership.</p>
           <p className="text-xl text-bold text-yellow-500 mt-20  items-center text-center">© 2024 Gudia Tv.Journal All rights reserved. | Privacy Policy | Terms of Use</p>
         </div>
