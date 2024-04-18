@@ -18,7 +18,7 @@ export default async function Home() {
           <Image
             src={gudia}
             alt="Gudia Logo"
-            className='w-full absolute top-0 left-0 h-[80vh] object-cover -z-10 bg-opacity-90 gry-shadow-lg '
+            className="w-full absolute top-0 left-0 h-[80vh] object-cover -z-10 "
           ></Image>
         </div>
       </MaxWidthWrapper>
