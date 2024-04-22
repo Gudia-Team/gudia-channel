@@ -25,7 +25,7 @@ export default function MovieCardTmdb({ movie }: { movie: Movie }) {
                     alt={movie?.title || movie?.name}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     fill
-                    className='rounded-sm absolute w-full h-full object-cover '
+                    className='rounded-sm absolute w-full h-full object-cover block'
                 />
                 <p className='text-green-400 font-semibold mt-4'>
                     {movie?.title || movie?.name} ({movie?.release_date?.substring(0, 4)})
