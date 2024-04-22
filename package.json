@@ -10,7 +10,11 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@kinde-oss/kinde-auth-nextjs": "^2.1.15",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "@prisma/client": "^5.12.1",
     "@prisma/extension-accelerate": "^1.0.0",
     "@radix-ui/react-avatar": "^1.0.4",

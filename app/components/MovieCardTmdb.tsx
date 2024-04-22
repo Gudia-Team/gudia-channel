@@ -5,6 +5,10 @@ import { Movie } from '@/models/types';
 import { useState } from 'react';
 import Modal from './Modal';
 
+
+
+
+
 export default function MovieCardTmdb({ movie }: { movie: Movie }) {
     const [showModel, setShowModel] = useState(false);
     const openModel = () => setShowModel(true);
@@ -21,14 +25,20 @@ export default function MovieCardTmdb({ movie }: { movie: Movie }) {
                     alt={movie?.title || movie?.name}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     fill
-                    className='cursor-pointer object-cover transition
-                 duration shadow-xl rounded-md group-hover:opacity-90
-                  sm:group-hover:opacity-0
-                   delay-300 w-full h-[12vw]'
+                    className='rounded-sm absolute w-full h-full object-cover '
                 />
-                <div className='border'></div>
+                <p className='text-green-400 font-semibold mt-4'>
+                    {movie?.title || movie?.name} ({movie?.release_date?.substring(0, 4)})
+                </p>
+                <div className='flex flex-row mt-4 gap-2 items-center'>
+                    <p className='text-white text-[10px] lg:text-sm'>
+                        {movie?.overview?.length > 50
+                            ? `${movie?.overview.substring(0, 50)}...`
+                            : movie?.overview}
+                    </p>
+                </div>
             </div>
-            {showModel && <Modal movie={movie} closeModel ={closeModel} />}
+            {showModel && <Modal movie={movie} closeModal={closeModel} />}
         </>
     );
 };

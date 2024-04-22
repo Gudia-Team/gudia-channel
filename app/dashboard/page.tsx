@@ -7,15 +7,14 @@ import { Genre } from "@/models/types";
 
 export default async function DashboardPage() {
     const genres = await fetchGenreMovies();
-    const exampel = genres.slice(0, 2)
-    console.log(exampel);
+
     return (
         <div className="p-3 lg:p-0 ">
 
             <MovieVideo />
             <RecentlyAdded />
             <div className="all-movies">
-                {exampel.map((genre: Genre) => (
+                {genres.map((genre: Genre) => (
                     <CategoryList key={genre.id} title={genre.name} movies={genre.movies} />
                 ))}
 

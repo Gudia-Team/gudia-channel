@@ -1,4 +1,7 @@
+import { ReactNode } from "react";
+
 export interface Movie {
+    [x: string]: ReactNode;
     adult: boolean;
     backdrop_path: string;
     genre_ids: number[];

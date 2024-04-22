@@ -1,26 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { Genre, Movie, Video } from "@/models/types"
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+
+import { Genre, Movie, Video } from "../../models//types";
+import { AddCircle, CancelRounded, RemoveCircle } from "@mui/icons-material";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface Props {
     movie: Movie;
-    closeModel: () => void;
+    closeModal: () => void;
 }
+
 interface User {
     email: string;
     username: string;
     favorites: number[];
 }
 
-export default function Modal({ movie, closeModel }: Props) {
+const Modal = ({ movie, closeModal }: Props) => {
     const router = useRouter();
 
     const [video, setVideo] = useState("");
     const [genres, setGenres] = useState<Genre[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [user, setUser] = useState<User | null>(null);
-    const [isFavorite, setIsFavorite] = useState(false);
+
+
 
     const options = {
         method: "GET",
@@ -29,6 +32,7 @@ export default function Modal({ movie, closeModel }: Props) {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`,
         },
     };
+
     const getMovieDetails = async () => {
         try {
             const res = await fetch(
@@ -43,6 +47,10 @@ export default function Modal({ movie, closeModel }: Props) {
                 );
                 setVideo(data.videos.results[index].key);
             }
+
+            if (data?.genres) {
+                setGenres(data.genres);
+            }
         } catch (err) {
             console.log("Error fetching movie details", err);
         }
@@ -50,11 +58,57 @@ export default function Modal({ movie, closeModel }: Props) {
 
     useEffect(() => {
         getMovieDetails();
-    }, [movie]);
+    }, [getMovieDetails, movie]);
+
+
+
 
     return (
-        <div className="modal">
+        <>
 
-        </div>
-    )
-}
+            <div className="modal">
+                <button className="modal-close" onClick={closeModal}>
+                    <CancelRounded
+                        sx={{ color: "white", fontSize: "35px", ":hover": { color: "red" } }}
+                    />
+                </button>
+
+                <iframe
+                    src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&loop=1`}
+                    className="modal-video"
+                    loading="lazy"
+                    allowFullScreen
+                />
+
+                <div className="modal-content">
+                    <div className="flex justify-between">
+                        <div className="flex gap-2">
+                            <p className="text-base-bold">Name:</p>
+                            <p className="text-base-light">{movie?.title || movie?.name}</p>
+                        </div>
+                    </div>
+                    <div className="flex gap-2">
+                        <p className="text-base-bold">Release Date:</p>
+                        <p className="text-base-light">{movie?.release_date}</p>
+                    </div>
+
+                    <p className="text-base-light">{movie?.overview}</p>
+
+                    <div className="flex gap-2">
+                        <p className="text-base-bold">Rating:</p>
+                        <p className="text-base-light">{movie?.vote_average}</p>
+                    </div>
+
+                    <div className="flex gap-2">
+                        <p className="text-base-bold">Genres:</p>
+                        <p className="text-base-light">
+                            {genres.map((genre) => genre.name).join(", ")}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Modal;
