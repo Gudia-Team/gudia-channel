@@ -10,14 +10,12 @@ export default async function DashboardPage() {
 
     return (
         <div className="p-3 lg:p-0 ">
-
             <MovieVideo />
             <RecentlyAdded />
             <div className="all-movies">
                 {genres.map((genre: Genre) => (
                     <CategoryList key={genre.id} title={genre.name} movies={genre.movies} />
                 ))}
-
             </div>
         </div>
     )
