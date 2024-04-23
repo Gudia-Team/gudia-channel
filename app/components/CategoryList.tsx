@@ -43,7 +43,7 @@ const CategoryList: React.FC<Props> = ({ title, movies }) => {
                     className='md:block text-white text-[40px] absolute mt-4 cursor-pointer right-0 z-10'
                     onClick={handleRightClick} 
                 />
-                <div className="relative flex w-full h-full overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-none"
+                <div className="relative flex w-full h-full overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-none gap-4"
                     ref={sliderRef}>
                     {movies.map((movie) => (
                         <MovieCardTmdb key={movie.id} movie={movie} />
