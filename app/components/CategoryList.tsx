@@ -26,7 +26,7 @@ const CategoryList: React.FC<Props> = ({ title, movies }) => {
     const handleRightClick = () => {
         if (sliderRef.current) {
             const { current: slider } = sliderRef;
-            slider.scrollLeft += 300; // Adjust this value as needed for your layout
+            slider.scrollLeft += 300; 
             setScrollPosition(slider.scrollLeft);
         }
     };
