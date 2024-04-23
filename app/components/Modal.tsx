@@ -73,12 +73,10 @@ const Modal = ({ movie, closeModal }: Props) => {
 
 
     return (
-        <>
-            <Dialog>
-                <DialogTrigger>
-                    open
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] items-center text-primary object-cover">
+
+        <Dialog open >
+            <DialogTrigger onClick={closeModal}>
+                <DialogContent className="sm:max-w-[425px] items-center text-primary object-cover ">
                     <DialogHeader>
                         <DialogTitle>
                             <div className="flex justify-between">
@@ -93,19 +91,18 @@ const Modal = ({ movie, closeModal }: Props) => {
                             </div>
 
                         </DialogTitle>
-                        <DialogDescription className="line-clamp-3">
+                        <DialogDescription className="line-clamp-3 ">
                             <p className="text-base-light">{movie?.overview}</p>
                         </DialogDescription>
                     </DialogHeader>
                     <iframe
                         src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&loop=1`}
-                        className="relative w-full h-196 object-cover items-center justify-center"
+                        className="relative w-full  object-cover items-center justify-center"
                         loading="lazy"
                         allowFullScreen
-                        width={800}
                         height={400}
                     />
-                    <div className="relative flex flex-col">
+                    <div className="relative flex flex-col border py-o.5 px-1 border-white rounded">
                         <p className="text-base-bold">Rating:</p>
                         <p className="text-base-light">{movie?.vote_average}</p>
                         <p className="text-base-bold">Genres:</p>
@@ -114,9 +111,10 @@ const Modal = ({ movie, closeModal }: Props) => {
                         </p>
                     </div>
                 </DialogContent>
-            </Dialog>
+            </DialogTrigger>
+        </Dialog>
 
-        </>
+
     );
 };
 
