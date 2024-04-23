@@ -76,16 +76,16 @@ const Modal = ({ movie, closeModal }: Props) => {
 
         <Dialog open >
             <DialogTrigger onClick={closeModal}>
-                <DialogContent className="sm:max-w-[425px] items-center text-primary object-cover ">
+                <DialogContent className="sm:max-w-[425px] items-center object-cover ">
                     <DialogHeader>
                         <DialogTitle>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between text-primary">
                                 <div className="flex gap-2">
                                     <p className="text-base-bold">Name:</p>
                                     <p className="text-base-light">{movie?.title || movie?.name}</p>
                                 </div>
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 text-primary">
                                 <p className="text-base-bold">Release Date:</p>
                                 <p className="text-base-light">{movie?.release_date}</p>
                             </div>
@@ -101,12 +101,13 @@ const Modal = ({ movie, closeModal }: Props) => {
                         loading="lazy"
                         allowFullScreen
                         height={400}
+
                     />
-                    <div className="relative flex flex-col border py-o.5 px-1 border-white rounded">
-                        <p className="text-base-bold">Rating:</p>
-                        <p className="text-base-light">{movie?.vote_average}</p>
-                        <p className="text-base-bold">Genres:</p>
-                        <p className="text-base-light">
+                    <div className="relative flex flex-col border py-2 px-1 rounded">
+                        <p className="text-yellow-500">Rating:</p>
+                        <p className="text-red-600">{movie?.vote_average}</p>
+                        <p className="text-green-500">Genres:</p>
+                        <p className="text-base-light font-bold">
                             {genres.map((genre) => genre.name).join(", ")}
                         </p>
                     </div>
