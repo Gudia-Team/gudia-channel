@@ -36,15 +36,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + " min-h-screen "}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar  />
-          {children}
+            <Navbar />
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              {children}
+            </div>
         </ThemeProvider>
       </body>
     </html>
