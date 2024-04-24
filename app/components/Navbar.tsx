@@ -6,7 +6,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { UserNav } from "./UserNav";
 import React, { useEffect, useState } from 'react';
 import NavbarItems from "./NavbarItems";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+
 
 
 
