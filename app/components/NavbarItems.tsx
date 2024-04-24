@@ -20,7 +20,7 @@ const links: linkProps[] = [
 export default function NavbarItems() {
     const pathName = usePathname();
     return (
-        <div className="items-center overflow-hidden lg:flex text-primary ">
+        <div className="items-center overflow-hidden lg:flex text-primary font-extrabold ">
             <div className="flex items-center">
                 <ul className="lg:flex gap-x-4 hidden">
                     {links.map((link, idx) => (

@@ -4,11 +4,6 @@ import { redirect } from "next/navigation";
 import gudia from "../public/assets/gudia.jpg";
 
 
-
-
-
-
-
 export default async function Home() {
   const { isAuthenticated } = getKindeServerSession();
   if (await isAuthenticated()) {
