@@ -3,9 +3,12 @@ import MovieVideo from "../components/MovieVideo";
 import RecentlyAdded from "../components/RecentlyAdded";
 import CategoryList from "../components/CategoryList";
 import { Genre } from "@/models/types";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 export default async function DashboardPage() {
+    const { getUser } = getKindeServerSession();
+    const user = await getUser();
     const genres = await fetchGenreMovies();
 
     return (

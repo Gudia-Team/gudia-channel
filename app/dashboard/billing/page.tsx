@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -7,7 +6,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
-import prisma from "@/app/lib/db";
+import prisma from "../../lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { getStripeSession, stripe } from "@/app/lib/stripe";
 import { redirect } from "next/navigation";
@@ -47,7 +46,7 @@ async function getData(userId: string) {
 export default async function BillingPage() {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
-    const data = await getData("");
+    const data = await getData(user?.id as string);
 
     async function createSubscription() {
         "use server";
