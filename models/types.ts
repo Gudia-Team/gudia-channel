@@ -1,3 +1,4 @@
+// TMDB API Types for Movie, Genre, and Video
 import { ReactNode } from "react";
 
 export interface Movie {
