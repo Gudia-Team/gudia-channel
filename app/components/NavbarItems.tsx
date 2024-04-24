@@ -1,8 +1,7 @@
 "use client";
-
-import { Bell, Search } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SiHomeadvisor } from "react-icons/si";
 
 interface linkProps {
     name: string;
@@ -20,8 +19,9 @@ const links: linkProps[] = [
 export default function NavbarItems() {
     const pathName = usePathname();
     return (
-        <div className="items-center overflow-hidden lg:flex text-primary font-extrabold ">
+        <div className="items-center overflow-hidden lg:flex text-primary font-bold ">
             <div className="flex items-center">
+                <SiHomeadvisor size={20} />
                 <ul className="lg:flex gap-x-4 hidden">
                     {links.map((link, idx) => (
                         <div key={idx}>
