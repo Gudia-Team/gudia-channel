@@ -20,7 +20,7 @@ const SearchResults = async ({ query }: { query: string }) => {
                 </h1>
                 <div className="container flex flex-wrap gap-2">
                     {searchedMovies.map((movie) => (
-                        <div className="w-full md:w-1/3 h-auto" key={movie.id}>
+                        <div className="w-full md:w-1/6 h-auto" key={movie.id}>
                             <MovieCardTmdb key={movie.id} movie={movie} />
                         </div>
                     ))}
