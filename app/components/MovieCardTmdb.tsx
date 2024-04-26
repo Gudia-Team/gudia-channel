@@ -20,7 +20,7 @@ export default function MovieCardTmdb({ movie }: { movie: Movie }) {
                     src={
                         movie?.backdrop_path || movie?.poster_path
                             ? `${baseImgUrl}${movie?.backdrop_path || movie?.poster_path}`
-                            : `${baseImgUrl}`
+                            : "/assets/no-image.png"
                     }
                     alt={movie?.title || movie?.name}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -12,7 +12,7 @@ export default function SearchMovies() {
     return (
         <section className="container flex gap-4 mb-[10px] z-20 items-center text-center text-primary opacity-50 overflow-hidden">
             <span className="item-center text-center font-extrabold text-2xl">
-                <RiMovie2Fill size={30}/>
+                <RiMovie2Fill size={30} />
             </span>
             <input
                 type="text"
@@ -23,13 +23,13 @@ export default function SearchMovies() {
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full p-3 border border-primary rounded-md"
             />
-            <button
-                onClick={() => router.push(`/search/${search}`)}
+            <button disabled={search === ""}
                 className="bg-primary text-white p-3 rounded-md  "
             >
-                <BsSearchHeart 
-                size={30}
-                color='red'
+                <BsSearchHeart
+                    size={30}
+                    color='red'
+                    onClick={() => router.push(`/search/${search}`)}
                 />
             </button>
         </section>
