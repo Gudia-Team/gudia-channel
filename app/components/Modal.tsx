@@ -2,7 +2,6 @@
 "use client";
 
 import { Genre, Movie, Video } from "../../models//types";
-import { AddCircle, CancelRounded, RemoveCircle } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -120,45 +119,3 @@ const Modal = ({ movie, closeModal }: Props) => {
 };
 
 export default Modal;
-
-// <div className="modal">
-//     <button className="modal-close" onClick={closeModal}>
-//         <CancelRounded
-//             sx={{ color: "white", fontSize: "35px", ":hover": { color: "red" } }}
-//         />
-//     </button>
-
-//     <iframe
-//         src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&loop=1`}
-//         className="modal-video"
-//         loading="lazy"
-//         allowFullScreen
-//     />
-
-//     <div className="modal-content">
-//         <div className="flex justify-between">
-//             <div className="flex gap-2">
-//                 <p className="text-base-bold">Name:</p>
-//                 <p className="text-base-light">{movie?.title || movie?.name}</p>
-//             </div>
-//         </div>
-//         <div className="flex gap-2">
-//             <p className="text-base-bold">Release Date:</p>
-//             <p className="text-base-light">{movie?.release_date}</p>
-//         </div>
-
-//         <p className="text-base-light">{movie?.overview}</p>
-
-//         <div className="flex gap-2">
-//             <p className="text-base-bold">Rating:</p>
-//             <p className="text-base-light">{movie?.vote_average}</p>
-//         </div>
-
-//         <div className="flex gap-2">
-//             <p className="text-base-bold">Genres:</p>
-//             <p className="text-base-light">
-//                 {genres.map((genre) => genre.name).join(", ")}
-//             </p>
-//         </div>
-//     </div>
-// </div>

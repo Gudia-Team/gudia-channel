@@ -1,6 +1,5 @@
 import SearchMovies from '@/app/components/SearchMovies'
 import SearchResults from '@/app/components/SearchResults'
-import { Search } from 'lucide-react'
 import React from 'react'
 
 function SearchPage({ params }: { params: { query: string } }) {
