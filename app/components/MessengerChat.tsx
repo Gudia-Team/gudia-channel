@@ -9,9 +9,9 @@ interface iAppProps {
     data: {
         message: string;
         User: {
-            name: string;
-            email: string;
-            image: string;
+            name: string | null;
+            email: string | null;
+            image: string | null;
         }
     }[];
 }
@@ -20,49 +20,48 @@ interface iAppProps {
 
 export default function MessengerChat({ data }: iAppProps) {
     const [totalComments, setTotalComments] = useState(data);
-    const messageEndRef =useRef<HTMLDivElement>(null);
+    const messageEndRef = useRef<HTMLDivElement>(null);
 
-    var pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY as string, {
-        cluster: 'eu'
-    });
-    var channel = pusher.subscribe('chat');
-    channel.bind('hello', function (data: any) {
-        const parsedComments = JSON.parse(data.message);
-        setTotalComments((prev) => [...prev, parsedComments])
+    useEffect(() => {
+        var pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY as string, {
+            cluster: 'eu'
+        });
+        var channel = pusher.subscribe('chat');
+        channel.bind('hello', function (data: any) {
+            const parsedComments = JSON.parse(data.message);
+            setTotalComments((prev) => [...prev, parsedComments])
 
-    });
+        });
+        return () => {
+            pusher.unsubscribe("chat");
+        };
 
-    const scrollToBottom = () => {
+    }, []);
+
+
+    const scrollTobottom = () => {
         messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
     };
     useEffect(() => {
-        scrollToBottom();
+        scrollTobottom();
     }, [totalComments]);
 
     return (
-        <div className="p-6 flex-grow max-h-screen overflow-y-auto py-32">
+        <div className="container flex-grow max-h-screen overflow-y-auto">
             <div className="flex flex-col gap-4">
                 {totalComments.map((message, index) => (
                     <div key={index}>
-                        <div className="flex items-center">
-                            {message.User.image ? (
-                                <Image
-                                    src={message.User.image as string}
-                                    alt="Profile image of user"
-                                    className="w-12 h-12 object-cover rounded-lg mr-4"
-                                    width={50}
-                                    height={50}
-                                />
-                            ) : (
-                                <div className="w-12 h-12 rounded-lg bg-gray-300 mr-4"></div>
-                            )}
-                            <div className="rounded-lg bg-black p-4 shadow-md self-start">
-                                {message.message}
+                        <div className="container flex items-center">
+
+                            <div className="rounded-full font-bold border border-blue-300 p-2 text-primary">
+
+                                {message.User.name}
+
                             </div>
+                            <p className="rounded-lg bg-none p-4 shadow-md self-start">
+                                {message.message}
+                            </p>
                         </div>
-                        <p className="font-light text-sm text-gray-600">
-                            {message.User.name}
-                        </p>
                     </div>
                 ))}
                 <div ref={messageEndRef}></div>

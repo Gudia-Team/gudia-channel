@@ -2,8 +2,8 @@
 
 import prisma from "@/app/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { User } from "lucide-react";
 import { revalidatePath } from "next/cache";
+import Pusher from "pusher";
 
 
 export async function addTowatchlist(formData: FormData) {
