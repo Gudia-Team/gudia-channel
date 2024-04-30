@@ -62,6 +62,7 @@ export async function postData(formData: FormData) {
     const user = await getUser();
     const data = await getData(user?.id as string);
     const message = formData.get("message");
+    const Pusher = require("pusher");
 
 
     await prisma.user.update({
@@ -95,5 +96,15 @@ export async function postData(formData: FormData) {
 
             }
         }
-    })
+    });
+    const pusher = new Pusher({
+        appId: process.env.NEXT_PUBLIC_PUSHER_APP_ID,
+        key: process.env.NEXT_PUBLIC_PUSHER_KEY,
+        secret: process.env.PUSHER_SECRET,
+        cluster: "eu",
+        useTLS: true,
+    });
+    await pusher.trigger("chat", "hello", {
+        message: `${JSON.stringify(data)}\n\n`,
+    });
 }
