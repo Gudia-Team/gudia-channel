@@ -72,12 +72,10 @@ export async function postData(formData: FormData) {
         data: {
             id: user?.id as string,
             email: user?.email as string,
-            name: user?.family_name as string,
-
         }
     });
 
-    const newdata  = await prisma.message.create({
+    const newdata = await prisma.message.create({
         data: {
             message: message as string,
             email: user?.email as string,
