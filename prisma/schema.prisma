@@ -43,7 +43,6 @@ model User {
   image            String?
   emailVerified    DateTime?
   accounts         Account[]
-  Message          Message[]
   sessions         Session[]
   Subscription     Subscription?
 }
@@ -89,13 +88,4 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
-}
-
-model Message {
-  id        String   @id @default(uuid())
-  message   String
-  userId    String
-  email     String?
-  createdAt DateTime @default(now())
-  User      User     @relation(fields: [userId], references: [id])
 }
