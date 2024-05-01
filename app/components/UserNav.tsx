@@ -12,11 +12,14 @@ import {
 import { CreditCard, DoorClosed, Home } from "lucide-react";
 import Link from "next/link";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { BsChat } from "react-icons/bs";
 
 
 export const navItems = [
     { name: "Home", icon: Home, href: "/dashboard" },
     { name: "Kaufen", icon: CreditCard, href: "/dashboard/billing" },
+    { name: "Chat Ai", icon: BsChat, href: "/dashboard/messanger" },
+
 ];
 
 export function UserNav({ name, email, image }: { name: string, email: string, image: string }) { //Interface für UserNav

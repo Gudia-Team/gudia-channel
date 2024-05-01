@@ -13,7 +13,6 @@ export default async function DashboardPage() {
     const user = await getUser();
     const genres = await fetchGenreMovies();
 
-
     return (
         <div className="p-3 lg:p-0 overflow-hidden ">
             <MovieVideo />
