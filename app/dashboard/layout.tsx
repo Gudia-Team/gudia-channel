@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import prisma from "../lib/db";
 import { stripe } from "../lib/stripe";
 import { revalidatePath, unstable_noStore as noStore } from "next/cache";
+import { number } from "zod";
 
 async function getData({ email, id, firstName, lastName, profileImage }: {
     email: string;
@@ -12,7 +13,6 @@ async function getData({ email, id, firstName, lastName, profileImage }: {
     lastName: string | undefined | null;
     profileImage: string | undefined | null;
 }) {
-    noStore();
     const user = await prisma.user.findUnique({
         where: {
             email: email,
