@@ -7,8 +7,9 @@ import { useRef, useEffect } from 'react'
 import { SiOpenaigym } from "react-icons/si";
 
 export default function Chat() {
+
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: 'api/chat',
+    api: '/api/chat',
     onError: (e) => {
       console.log(e)
     }
@@ -26,14 +27,14 @@ export default function Chat() {
     <main className="flex flex-col w-full h-screen max-h-dvh bg-background">
 
       <header className="flex items-center gap-6 p-4 border-b w-full max-w-3xl mx-auto">
-        <h1 className="text-2xl font-bold"> Gudia .Tv Chat Messanger
+        <h1 className="text-2xl font-bold">Gudia .Tv Chat Ai
         </h1>
         <SiOpenaigym size={40} />
       </header>
 
       <section className="p-4">
         <form onSubmit={handleSubmit} className="flex w-full max-w-3xl mx-auto items-center">
-          <Input className="flex-1 min-h-[40px]" placeholder="Geben Sie ihre Frage hier ein..." type="text" value={input} onChange={handleInputChange} />
+          <Input className="flex-1 min-h-[40px]" placeholder="Type your question here..." type="text" value={input} onChange={handleInputChange} />
           <Button className="ml-2" type="submit">
             Submit
           </Button>
